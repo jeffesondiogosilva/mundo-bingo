@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Bingo</title>
+</head>
+<body>
+
+    <div class="content">
+
+        <div onload="minha_cartela()" id="globo">
+            
+            <h1>Bingo Viagens</h1>
+            <button id="btn-cartela" onclick="minha_cartela()">Minha cartela</button> <br>
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <div id="cartela"></div>            
+            <img id="img-globo" src="https://acegif.com/wp-content/uploads/gifs/globe-7.gif" alt=""> <br>
+            <button id="giro" onclick="sortear_num()" >Sortear número</button> 
+
+            <div id="numbers"></div>
+
+            <div id="sorteados"></div>
+
+            <div>
+                <h2>Se você marcou todos os números você tem direito a viajar pra algum lugar! </h2>
+
+                <button id="btn-viagem" onclick="mostrar_viagem()">Sortear viagem</button>
+
+                <div id="res-viagem"></div> <br> <br>
+
+                <h4>O vencedor deverá escolher uma prenda leve para o último colocado!</h4>
+            </div>
+
+            
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>
