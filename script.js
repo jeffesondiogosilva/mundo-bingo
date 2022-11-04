@@ -1,31 +1,53 @@
 const numeros = [];
 const num_sorteados = [];
 
-for (var i = 0; i <= 60; i++) {
+for (var i = 0; i <= 50; i++) {
     numeros.push(i);
 };
 
-const utl_num = 0;
+
 
 function sortear_num (){
     const numero_sorteado  = Math.floor(Math.random() * numeros.length);
+    const repetido = num_sorteados.find (e => e === numero_sorteado);
+    console.log(repetido);
 
-    
-    document.getElementById('numbers').innerHTML = numero_sorteado;
+    if (repetido != undefined) {  //se repetido não for undefined é porque veio numero repetido
         
-    
-    
-    num_sorteados.push(numero_sorteado);
-    document.getElementById('sorteados').innerHTML = num_sorteados;
+        // document.getElementById('numbers').innerHTML = '<h5>Clique novamente</h5>';
+        sortear_num();
+
+    } else {
+
+        document.getElementById('numbers').innerHTML = numero_sorteado;
+
+        num_sorteados.push(numero_sorteado);
+        document.getElementById('sorteados').innerHTML = num_sorteados;
+    }
+             
 
 }
+
+var ult_num = 1; //essa constante receberá o ultimo numero da cartela e impedirá de repetir
 
 function minha_cartela() {
     const cartela = [];
     
-    for (let i = 0; i <= 5; i++) {
-        cartela[i] = Math.floor(Math.random() * numeros.length);
+    
+    for (let i = 0; i < 5; i++) {
+
+        if (cartela[i] != ult_num){
+
+            cartela[i] = Math.floor(Math.random() * numeros.length);
+            ult_num = cartela[i];
+        
+        } else {
+            minha_cartela();
+        }
+        
+
     }
+       
 
     document.getElementById('cartela').innerHTML = cartela;
     console.log(cartela);
