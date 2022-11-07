@@ -1,3 +1,4 @@
+
 const numeros = [];
 const num_sorteados = [];
 
@@ -28,7 +29,6 @@ function sortear_num (){
 
 }
 
-var ult_num = 1; //essa constante receberá o ultimo numero da cartela e impedirá de repetir
 
 function minha_cartela() {
     const cartela = [];
@@ -36,33 +36,38 @@ function minha_cartela() {
     
     for (let i = 0; i < 5; i++) {
 
-        if (cartela[i] != ult_num){
-
-            cartela[i] = Math.floor(Math.random() * numeros.length);
-            ult_num = cartela[i];
         
-        } else {
-            minha_cartela();
-        }
+        cartela[i] = Math.floor(Math.random() * numeros.length);                            
         
-
     }
-       
 
-    document.getElementById('cartela').innerHTML = cartela;
-    console.log(cartela);
+    if ([...new Set(cartela)].length < 5 ){  // se o array sem repetições tiver menos de 5 elemento repita a operação
+
+        minha_cartela()
+    
+    } else {
+
+        document.getElementById('cartela').innerHTML = [...new Set(cartela)];
+        console.log(cartela);
+    }
+
+    
+    
+    
 }
 
+    
+       
+
+    
+
+
 const viagens = [
-    { 
-        lugar: '<h2>Pirâmides do Egito</h2>',
-        frase: '<h3>Se você gosta de calor e de história está indo no lugar certo!</h3>',
-        img: '<img class="img-viagem" src="https://img-aws.ehowcdn.com/750x400p/s3.amazonaws.com/uploadedimages.demandmedia/178375366.jpeg"></img>'
-    }, 
+     
 
     { 
         lugar: '<h2>Ilhas Gregas</h2>',
-        frase: '<h3>Se você gosta de mitologia e de águas crsitalinas tá aí um bom lugar!</h3>',
+        frase: '<h3>Se você gosta de mitologia e de águas cristalinas tá aí um bom lugar!</h3>',
         img: '<img class="img-viagem" src="https://www.viajali.com.br/wp-content/uploads/2017/12/ilhas-gregas-1-1.jpg"></img>'
     },
     
@@ -78,11 +83,6 @@ const viagens = [
         img: '<img class="img-viagem" src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2013/03/Fernando-de-Noronha-O-que-Fazer.jpg"></img>'
     },
 
-    { 
-        lugar: '<h2>Savana Africana</h2>',
-        frase: '<h3>A natureza aqui é linda mas um Leão pode te comer a qualquer momento</h3>',
-        img: '<img class="img-viagem" src="https://s4.static.brasilescola.uol.com.br/be/2021/08/savana-africana.jpg"></img>'
-    },
 
     { 
         lugar: '<h2>Alasca</h2>',
@@ -106,6 +106,36 @@ const viagens = [
         lugar: '<h2>Guarabira</h2>',
         frase: '<h3>Dona de um calor quase infernal, essa cidade vai te cozinhar vivo! </h3>',
         img: '<img class="img-viagem" src="https://brejo.com/wp-content/uploads/2020/05/guarabira-rose-video.jpg"></img>'
+    },
+
+    { 
+        lugar: '<h2>Juazeiro do Norte</h2>',
+        frase: '<h3> Não recomendo levar agasalhos e sim gelo e creme para assaduras</h3>',
+        img: '<img class="img-viagem" src="https://www.badalo.com.br/wp-content/uploads/2019/08/g_20190828235247_15487.jpg"></img>'
+    },
+
+    { 
+        lugar: '<h2>Bayeux</h2>',
+        frase: '<h3>Essa cidade combina com você! kkk Boa sorte!</h3>',
+        img: '<img class="img-viagem" src="https://cdn.oimenu.com.br/public/cidades/bayeux-pb.jpg?05012021"></img>'
+    },
+
+    { 
+        lugar: '<h2>Gramado</h2>',
+        frase: '<h3>Parabéns! Lugar lindo e aconchegante.</h3>',
+        img: '<img class="img-viagem" src="https://parqueterramagicaflorybal.com.br/imagens/pagina/gramado4-1-270649.jpg"></img>'
+    },
+
+    { 
+        lugar: '<h2>Coreia do Norte</h2>',
+        frase: '<h3>Se arrombou! Se não seguir as regras vai ser metralhado hein...</h3>',
+        img: '<img class="img-viagem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5zZiNIqT6jV6WowiG-ofstHGBc3bSjigW2g&usqp=CAU"></img>'
+    },
+
+    { 
+        lugar: '<h2>Ucrânia</h2>',
+        frase: '<h3>Tomou no papêro! Péssima hora pra visitar esse país</h3>',
+        img: '<img class="img-viagem" src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/10/ucrania-bandeira.jpg?w=876&h=484&crop=1"></img>'
     },
 ];
 

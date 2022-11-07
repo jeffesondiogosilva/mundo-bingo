@@ -1,3 +1,12 @@
+body {
+    background: linear-gradient(turquoise, white);
+}
+
+.caixinha {
+    width: 2%;
+    
+}
+
 .content{
     text-align: center;
 
