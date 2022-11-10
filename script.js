@@ -8,10 +8,13 @@ for (var i = 0; i <= 50; i++) {
 
 
 
+
 function sortear_num (){
     const numero_sorteado  = Math.floor(Math.random() * numeros.length);
     const repetido = num_sorteados.find (e => e === numero_sorteado);
     console.log(repetido);
+   
+
 
     if (repetido != undefined) {  //se repetido não for undefined é porque veio numero repetido
         
@@ -33,6 +36,8 @@ function sortear_num (){
 function minha_cartela() {
     const cartela = [];
     
+    const audio = new Audio('Gravação (13).m4a');
+    audio.play();
     
     for (let i = 0; i < 5; i++) {
 
