@@ -20,7 +20,7 @@
 
 <h3 id="status">Status</h3> <br>
 
-<p>Em desenvolvimento</p> <br><br>
+<p>Finalizado</p> <br><br>
 
 
 <h3 id="func">Funcionalidades</h3> <br>
